@@ -21,6 +21,16 @@ public class SceneController : MonoBehaviour
         }
     }
 
+    public void LoadStore()
+    {
+        SceneManager.LoadScene(4);
+    }
+
+    public void LoadGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+
     public void LoadSettings()
     {
         SceneManager.LoadScene(3);

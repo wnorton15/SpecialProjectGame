@@ -210,6 +210,7 @@ GameObject:
   - component: {fileID: 209691579}
   - component: {fileID: 209691578}
   - component: {fileID: 209691580}
+  - component: {fileID: 209691581}
   m_Layer: 5
   m_Name: Region 7
   m_TagString: Untagged
@@ -315,6 +316,23 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &209691581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209691576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb6228d5481a9bb46ad275e8d55d2642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectId: 7
+  trees: 0
+  infectedTrees: 0
+  percentInfected: 0
+  infectionCounter: {fileID: 1808283438}
 --- !u!1 &278295112
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,6 +345,7 @@ GameObject:
   - component: {fileID: 278295115}
   - component: {fileID: 278295114}
   - component: {fileID: 278295116}
+  - component: {fileID: 278295117}
   m_Layer: 5
   m_Name: Region 8
   m_TagString: Untagged
@@ -432,6 +451,23 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &278295117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278295112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb6228d5481a9bb46ad275e8d55d2642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectId: 8
+  trees: 0
+  infectedTrees: 0
+  percentInfected: 0
+  infectionCounter: {fileID: 1808283438}
 --- !u!1 &426324798
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,6 +480,7 @@ GameObject:
   - component: {fileID: 426324801}
   - component: {fileID: 426324800}
   - component: {fileID: 426324802}
+  - component: {fileID: 426324803}
   m_Layer: 5
   m_Name: Region 6
   m_TagString: Untagged
@@ -549,6 +586,23 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &426324803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426324798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb6228d5481a9bb46ad275e8d55d2642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectId: 6
+  trees: 0
+  infectedTrees: 0
+  percentInfected: 0
+  infectionCounter: {fileID: 1808283438}
 --- !u!1 &506518686
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,6 +615,7 @@ GameObject:
   - component: {fileID: 506518690}
   - component: {fileID: 506518689}
   - component: {fileID: 506518688}
+  - component: {fileID: 506518691}
   m_Layer: 5
   m_Name: Region 1
   m_TagString: Untagged
@@ -666,6 +721,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506518686}
   m_CullTransparentMesh: 0
+--- !u!114 &506518691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506518686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb6228d5481a9bb46ad275e8d55d2642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectId: 1
+  trees: 0
+  infectedTrees: 0
+  percentInfected: 0
+  infectionCounter: {fileID: 1808283438}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -902,6 +974,7 @@ RectTransform:
   - {fileID: 209691577}
   - {fileID: 278295113}
   - {fileID: 1385043690}
+  - {fileID: 1808283437}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -965,6 +1038,7 @@ GameObject:
   - component: {fileID: 1272482391}
   - component: {fileID: 1272482390}
   - component: {fileID: 1272482389}
+  - component: {fileID: 1272482392}
   m_Layer: 5
   m_Name: Region 3
   m_TagString: Untagged
@@ -1033,18 +1107,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1272482390}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 603679289}
-        m_MethodName: abc
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1272482390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1081,6 +1144,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1272482387}
   m_CullTransparentMesh: 0
+--- !u!114 &1272482392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272482387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb6228d5481a9bb46ad275e8d55d2642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectId: 3
+  trees: 0
+  infectedTrees: 0
+  percentInfected: 0
+  infectionCounter: {fileID: 1808283438}
 --- !u!1 &1385043686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,6 +1173,7 @@ GameObject:
   - component: {fileID: 1385043689}
   - component: {fileID: 1385043688}
   - component: {fileID: 1385043687}
+  - component: {fileID: 1385043691}
   m_Layer: 5
   m_Name: Region 9
   m_TagString: Untagged
@@ -1198,6 +1279,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1200, y: 904}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1385043691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385043686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb6228d5481a9bb46ad275e8d55d2642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectId: 9
+  trees: 0
+  infectedTrees: 0
+  percentInfected: 0
+  infectionCounter: {fileID: 1808283438}
 --- !u!1 &1451895801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,6 +1308,7 @@ GameObject:
   - component: {fileID: 1451895805}
   - component: {fileID: 1451895804}
   - component: {fileID: 1451895803}
+  - component: {fileID: 1451895806}
   m_Layer: 5
   m_Name: Region 2
   m_TagString: Untagged
@@ -1315,6 +1414,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1451895801}
   m_CullTransparentMesh: 0
+--- !u!114 &1451895806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451895801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb6228d5481a9bb46ad275e8d55d2642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectId: 2
+  trees: 0
+  infectedTrees: 0
+  percentInfected: 0
+  infectionCounter: {fileID: 1808283438}
 --- !u!1 &1666745276
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,6 +1443,7 @@ GameObject:
   - component: {fileID: 1666745279}
   - component: {fileID: 1666745278}
   - component: {fileID: 1666745280}
+  - component: {fileID: 1666745281}
   m_Layer: 5
   m_Name: Region 5
   m_TagString: Untagged
@@ -1432,6 +1549,23 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1666745281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666745276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb6228d5481a9bb46ad275e8d55d2642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectId: 5
+  trees: 0
+  infectedTrees: 0
+  percentInfected: 0
+  infectionCounter: {fileID: 1808283438}
 --- !u!1 &1743368229
 GameObject:
   m_ObjectHideFlags: 0
@@ -1627,6 +1761,83 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1808283436
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1808283437}
+  - component: {fileID: 1808283439}
+  - component: {fileID: 1808283438}
+  m_Layer: 5
+  m_Name: Infection Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1808283437
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808283436}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 665605958}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -530.6, y: -276}
+  m_SizeDelta: {x: 634.8, y: 86.9}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1808283438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808283436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 50
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 5
+    m_MaxSize: 50
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1808283439
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808283436}
+  m_CullTransparentMesh: 0
 --- !u!1 &2037124468
 GameObject:
   m_ObjectHideFlags: 0
@@ -1639,6 +1850,7 @@ GameObject:
   - component: {fileID: 2037124471}
   - component: {fileID: 2037124470}
   - component: {fileID: 2037124472}
+  - component: {fileID: 2037124473}
   m_Layer: 5
   m_Name: Region 4
   m_TagString: Untagged
@@ -1744,3 +1956,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2037124473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037124468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb6228d5481a9bb46ad275e8d55d2642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectId: 4
+  trees: 0
+  infectedTrees: 0
+  percentInfected: 0
+  infectionCounter: {fileID: 1808283438}

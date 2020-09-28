@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Region : MonoBehaviour
 {
+    [SerializeField] [Range(1, 9)] int projectId;
     [SerializeField] int trees;
     [SerializeField] int infectedTrees = 0;
     [SerializeField] float percentInfected;

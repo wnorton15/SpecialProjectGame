@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class Region : MonoBehaviour
 {
-    [SerializeField] [Range(1, 9)] int projectId;
-    [SerializeField] int trees;
+    [SerializeField] int trees = 1;
     [SerializeField] int infectedTrees = 0;
     [SerializeField] float percentInfected;
     [SerializeField] Text infectionCounter;
@@ -20,7 +19,13 @@ public class Region : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //set infection counter 
-        infectionCounter.text = infectedTrees.ToString();
+
+    }
+
+    public void ShowInfo()
+    {
+        infectionCounter.text = "Healthy Trees: " + (trees - infectedTrees).ToString() +
+            "\nInfected Trees: " + infectedTrees.ToString() +
+            "\nPercent Infected: " + ((infectedTrees/trees)*100).ToString() + "%";
     }
 }

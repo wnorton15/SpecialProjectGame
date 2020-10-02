@@ -339,7 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb6228d5481a9bb46ad275e8d55d2642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trees: 7
+  trees: 1000000
   infectedTrees: 7
   percentInfected: 0
   infectionCounter: {fileID: 1808283438}
@@ -484,7 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb6228d5481a9bb46ad275e8d55d2642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trees: 8
+  trees: 1000000
   infectedTrees: 8
   percentInfected: 0
   infectionCounter: {fileID: 1808283438}
@@ -629,7 +629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb6228d5481a9bb46ad275e8d55d2642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trees: 6
+  trees: 1000000
   infectedTrees: 6
   percentInfected: 0
   infectionCounter: {fileID: 1808283438}
@@ -774,7 +774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb6228d5481a9bb46ad275e8d55d2642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trees: 1
+  trees: 1000000
   infectedTrees: 1
   percentInfected: 0
   infectionCounter: {fileID: 1808283438}
@@ -1207,7 +1207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb6228d5481a9bb46ad275e8d55d2642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trees: 3
+  trees: 1000000
   infectedTrees: 3
   percentInfected: 0
   infectionCounter: {fileID: 1808283438}
@@ -1352,7 +1352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb6228d5481a9bb46ad275e8d55d2642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trees: 9
+  trees: 1000000
   infectedTrees: 9
   percentInfected: 0
   infectionCounter: {fileID: 1808283438}
@@ -1497,7 +1497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb6228d5481a9bb46ad275e8d55d2642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trees: 2
+  trees: 1000000
   infectedTrees: 2
   percentInfected: 0
   infectionCounter: {fileID: 1808283438}
@@ -1642,7 +1642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb6228d5481a9bb46ad275e8d55d2642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trees: 5
+  trees: 1000000
   infectedTrees: 5
   percentInfected: 0
   infectionCounter: {fileID: 1808283438}
@@ -2059,7 +2059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb6228d5481a9bb46ad275e8d55d2642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trees: 4
+  trees: 1000000
   infectedTrees: 4
   percentInfected: 0
   infectionCounter: {fileID: 1808283438}

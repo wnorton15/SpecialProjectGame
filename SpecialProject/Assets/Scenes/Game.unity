@@ -347,6 +347,7 @@ MonoBehaviour:
   - {fileID: 2037124473}
   - {fileID: 426324803}
   - {fileID: 278295117}
+  image: {fileID: 209691578}
 --- !u!1 &278295112
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,6 +496,7 @@ MonoBehaviour:
   surroundingRegions:
   - {fileID: 209691581}
   - {fileID: 1385043691}
+  image: {fileID: 278295114}
 --- !u!1 &426324798
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,6 +646,7 @@ MonoBehaviour:
   - {fileID: 1666745281}
   - {fileID: 2037124473}
   - {fileID: 209691581}
+  image: {fileID: 426324800}
 --- !u!1 &506518686
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,6 +794,7 @@ MonoBehaviour:
   infectionCounter: {fileID: 1808283438}
   surroundingRegions:
   - {fileID: 1451895806}
+  image: {fileID: 506518689}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,6 +944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dea5a564437ba04bbadda02f076896e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  difficulty: 1
 --- !u!1 &665605954
 GameObject:
   m_ObjectHideFlags: 0
@@ -1240,6 +1245,7 @@ MonoBehaviour:
   surroundingRegions:
   - {fileID: 1451895806}
   - {fileID: 2037124473}
+  image: {fileID: 1272482390}
 --- !u!1 &1385043686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,6 +1393,7 @@ MonoBehaviour:
   infectionCounter: {fileID: 1808283438}
   surroundingRegions:
   - {fileID: 278295117}
+  image: {fileID: 1385043688}
 --- !u!1 &1451895801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1535,6 +1542,7 @@ MonoBehaviour:
   surroundingRegions:
   - {fileID: 506518691}
   - {fileID: 1272482392}
+  image: {fileID: 1451895804}
 --- !u!1 &1666745276
 GameObject:
   m_ObjectHideFlags: 0
@@ -1683,6 +1691,7 @@ MonoBehaviour:
   surroundingRegions:
   - {fileID: 2037124473}
   - {fileID: 426324803}
+  image: {fileID: 1666745278}
 --- !u!1 &1743368229
 GameObject:
   m_ObjectHideFlags: 0
@@ -2135,3 +2144,4 @@ MonoBehaviour:
   - {fileID: 1666745281}
   - {fileID: 426324803}
   - {fileID: 209691581}
+  image: {fileID: 2037124470}

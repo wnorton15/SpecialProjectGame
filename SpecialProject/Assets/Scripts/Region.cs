@@ -11,16 +11,23 @@ public class Region : MonoBehaviour
     [SerializeField] float percentInfected;
     [SerializeField] Text infectionCounter;
     [SerializeField] Region[] surroundingRegions;
+    [SerializeField] Image image;
     float timeBetweenInfectingNewRegion = 10f;
     float timeSinceInfectedNewRegion = 0f;
     float timeSinceSpread = Mathf.Infinity;
     float timeBetweenSpread = 2f;
     bool showing = false;
 
+    float originalRColor;
+    float originalGColor;
+    float originalBColor;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        originalRColor = image.color.r;
+        originalGColor = image.color.g;
+        originalBColor = image.color.b;
     }
 
     // Update is called once per frame
@@ -37,22 +44,52 @@ public class Region : MonoBehaviour
         }
 
         //timer for spreading to new region 
-        if (timeSinceInfectedNewRegion > timeBetweenInfectingNewRegion)
+        if (timeSinceInfectedNewRegion > timeBetweenInfectingNewRegion && percentInfected > .2f)
         {
             SpreadToNewRegion();
         }
-        else if (infectedTrees > (trees / 2))
+        else 
         {
             timeSinceInfectedNewRegion += Time.deltaTime;
         }
+
+        //change color 
+        ChangeColor();
+
+        percentInfected = (float)((float)infectedTrees / (float)trees);
 
         //update counter
         if (showing)
         {
             infectionCounter.text = "Healthy Trees: " + (trees - infectedTrees).ToString() +
                 "\nInfected Trees: " + infectedTrees.ToString() +
-                "\nPercent Infected: " + ((infectedTrees / trees) * 100).ToString() + "%";
+                "\nPercent Infected: " + (percentInfected * 100).ToString() + "%";
         }
+    }
+
+    private void ChangeColor()
+    {
+        float newRValue = originalRColor - percentInfected;
+        float newBValue = originalBColor - percentInfected;
+        float newGValue = originalGColor - percentInfected;
+
+        if (newRValue < .3)
+        {
+            newRValue = .3f;
+        }
+
+        if (newBValue < .3)
+        {
+            newBValue = .3f;
+        }
+
+        if (newGValue < .3)
+        {
+            newGValue = .3f;
+        }
+
+
+        image.color = new Color(newRValue, newGValue, newBValue);
     }
 
     private void SpreadToNewRegion()
@@ -66,6 +103,7 @@ public class Region : MonoBehaviour
             } else
             {
                 region.Infect();
+                timeSinceInfectedNewRegion = 0f;
                 return;
             }
         }
@@ -78,15 +116,15 @@ public class Region : MonoBehaviour
         int difficulty = FindObjectOfType<Settings>().getDifficulty();
         if (difficulty == 1)
         {
-            difficultyMultiplier = 1;
+            difficultyMultiplier = 1f;
         }
         else if (difficulty == 2)
         {
-            difficultyMultiplier = 1.3;
+            difficultyMultiplier = 1.3f;
         }
         else if (difficulty == 3)
         {
-            difficultyMultiplier = 1.6;
+            difficultyMultiplier = 1.6f;
         }
         //increase the infection faster as the infection grows
         if (infectedTrees > 0 && infectedTrees < 10)

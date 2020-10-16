@@ -340,9 +340,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trees: 1000000
-  infectedTrees: 7
+  infectedTrees: 0
   percentInfected: 0
   infectionCounter: {fileID: 1808283438}
+  surroundingRegions:
+  - {fileID: 2037124473}
+  - {fileID: 426324803}
+  - {fileID: 278295117}
 --- !u!1 &278295112
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,9 +489,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trees: 1000000
-  infectedTrees: 8
+  infectedTrees: 0
   percentInfected: 0
   infectionCounter: {fileID: 1808283438}
+  surroundingRegions:
+  - {fileID: 209691581}
+  - {fileID: 1385043691}
 --- !u!1 &426324798
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,9 +637,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trees: 1000000
-  infectedTrees: 6
+  infectedTrees: 0
   percentInfected: 0
   infectionCounter: {fileID: 1808283438}
+  surroundingRegions:
+  - {fileID: 1666745281}
+  - {fileID: 2037124473}
+  - {fileID: 209691581}
 --- !u!1 &506518686
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,6 +789,8 @@ MonoBehaviour:
   infectedTrees: 1
   percentInfected: 0
   infectionCounter: {fileID: 1808283438}
+  surroundingRegions:
+  - {fileID: 1451895806}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,6 +884,7 @@ GameObject:
   m_Component:
   - component: {fileID: 603679290}
   - component: {fileID: 603679289}
+  - component: {fileID: 603679291}
   m_Layer: 0
   m_Name: ButtonController
   m_TagString: Untagged
@@ -914,6 +928,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &603679291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603679288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dea5a564437ba04bbadda02f076896e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &665605954
 GameObject:
   m_ObjectHideFlags: 0
@@ -1208,9 +1234,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trees: 1000000
-  infectedTrees: 3
+  infectedTrees: 0
   percentInfected: 0
   infectionCounter: {fileID: 1808283438}
+  surroundingRegions:
+  - {fileID: 1451895806}
+  - {fileID: 2037124473}
 --- !u!1 &1385043686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,9 +1382,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trees: 1000000
-  infectedTrees: 9
+  infectedTrees: 0
   percentInfected: 0
   infectionCounter: {fileID: 1808283438}
+  surroundingRegions:
+  - {fileID: 278295117}
 --- !u!1 &1451895801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1498,9 +1529,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trees: 1000000
-  infectedTrees: 2
+  infectedTrees: 0
   percentInfected: 0
   infectionCounter: {fileID: 1808283438}
+  surroundingRegions:
+  - {fileID: 506518691}
+  - {fileID: 1272482392}
 --- !u!1 &1666745276
 GameObject:
   m_ObjectHideFlags: 0
@@ -1643,9 +1677,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trees: 1000000
-  infectedTrees: 5
+  infectedTrees: 0
   percentInfected: 0
   infectionCounter: {fileID: 1808283438}
+  surroundingRegions:
+  - {fileID: 2037124473}
+  - {fileID: 426324803}
 --- !u!1 &1743368229
 GameObject:
   m_ObjectHideFlags: 0
@@ -1918,6 +1955,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1808283436}
   m_CullTransparentMesh: 0
+--- !u!1 &2033361587
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2033361588}
+  m_Layer: 0
+  m_Name: Settings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2033361588
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033361587}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 429.40002, y: 264, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2037124468
 GameObject:
   m_ObjectHideFlags: 0
@@ -2060,6 +2127,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trees: 1000000
-  infectedTrees: 4
+  infectedTrees: 0
   percentInfected: 0
   infectionCounter: {fileID: 1808283438}
+  surroundingRegions:
+  - {fileID: 1272482392}
+  - {fileID: 1666745281}
+  - {fileID: 426324803}
+  - {fileID: 209691581}

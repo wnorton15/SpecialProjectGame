@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Region : MonoBehaviour
 {
+    [SerializeField] int regionID;
     [SerializeField] int trees = 1;
     [SerializeField] int infectedTrees = 0;
     [SerializeField] float percentInfected;
@@ -15,12 +16,18 @@ public class Region : MonoBehaviour
     float timeBetweenInfectingNewRegion = 10f;
     float timeSinceInfectedNewRegion = 0f;
     float timeSinceSpread = Mathf.Infinity;
-    float timeBetweenSpread = 2f;
+    float timeBetweenSpread = .5f;
+    //variables for adding money 
+    float timeSinceAddedMoney = Mathf.Infinity;
+    float timeBetweenAddedMoney = 5f;
+
     bool showing = false;
 
     float originalRColor;
     float originalGColor;
     float originalBColor;
+
+    NewsController newsController;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +35,8 @@ public class Region : MonoBehaviour
         originalRColor = image.color.r;
         originalGColor = image.color.g;
         originalBColor = image.color.b;
+
+        newsController = FindObjectOfType<NewsController>();
     }
 
     // Update is called once per frame
@@ -170,5 +179,12 @@ public class Region : MonoBehaviour
     public void Infect()
     {
         infectedTrees++;
+        String newNews = "Region " + regionID.ToString() + " has been infected";
+        newsController.ChangeNews(newNews);
+    }
+
+    private void addToMoney()
+    {
+
     }
 }

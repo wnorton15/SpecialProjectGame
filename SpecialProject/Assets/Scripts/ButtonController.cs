@@ -20,9 +20,4 @@ public class ButtonController : MonoBehaviour
     {
         
     }
-
-    public void abc()
-    {
-        Debug.Log("abc");
-    }
 }

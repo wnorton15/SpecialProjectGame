@@ -21,6 +21,10 @@ public class Region : MonoBehaviour
     float timeSinceAddedMoney = Mathf.Infinity;
     float timeBetweenAddedMoney = 5f;
 
+    float timeSinceFirstInfested = 0f;
+    bool firstDonation = false;
+    [SerializeField] int firstDonationAmount = 1000000;
+
     bool showing = false;
 
     float originalRColor;
@@ -73,6 +77,20 @@ public class Region : MonoBehaviour
             infectionCounter.text = "Healthy Trees: " + (trees - infectedTrees).ToString() +
                 "\nInfected Trees: " + infectedTrees.ToString() +
                 "\nPercent Infected: " + (percentInfected * 100).ToString() + "%";
+        }
+
+        if (infectedTrees > 0)
+        {
+            timeSinceFirstInfested += Time.deltaTime;
+        }
+
+        if (timeSinceFirstInfested > 10 && firstDonation == false)
+        {
+            FindObjectOfType<MoneyController>().AddToBankroll(firstDonationAmount);
+            firstDonation = true;
+            string newNews = "Region " + regionID.ToString() + " has donated $" +
+                firstDonationAmount.ToString() + " to slow the spread";
+            newsController.ChangeNews(newNews);
         }
     }
 
@@ -181,10 +199,7 @@ public class Region : MonoBehaviour
         infectedTrees++;
         String newNews = "Region " + regionID.ToString() + " has been infected";
         newsController.ChangeNews(newNews);
-    }
-
-    private void addToMoney()
-    {
-
+        //start timer for donation, after 10 seconds add to money and change news to reflect 
+        
     }
 }

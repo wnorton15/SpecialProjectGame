@@ -32,6 +32,7 @@ public class Region : MonoBehaviour
     float originalBColor;
 
     NewsController newsController;
+    SaveSystemController saveSystem;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,9 @@ public class Region : MonoBehaviour
         originalBColor = image.color.b;
 
         newsController = FindObjectOfType<NewsController>();
+        saveSystem = FindObjectOfType<SaveSystemController>();
+
+        infectedTrees = saveSystem.GetInfestedTrees(regionID);
     }
 
     // Update is called once per frame
@@ -92,6 +96,12 @@ public class Region : MonoBehaviour
                 firstDonationAmount.ToString() + " to slow the spread";
             newsController.ChangeNews(newNews);
         }
+    }
+
+    private void OnDestroy()
+    {
+        //save the infestation numbers
+        saveSystem.SetInfestedTrees(regionID, infectedTrees);
     }
 
     private void ChangeColor()

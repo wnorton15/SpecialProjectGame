@@ -41,6 +41,10 @@ public class SaveSystemController : MonoBehaviour
                     regionVariables[i] = new RegionVariables(0, 0f, 0f, 0f, 0f, false);
                 }
             }
+            if (PlayerPrefs.HasKey("Region1InfestedTrees"))
+            {
+                LoadGame();
+            }
         }
         //if instance exists and isn't this 
         else if (instance != this)
@@ -59,6 +63,51 @@ public class SaveSystemController : MonoBehaviour
     public RegionVariables GetRegionVars(int regionNumber)
     {
         return regionVariables[regionNumber - 1];
+    }
+
+    public void SaveGame()
+    {
+        for (int i = 0; i < regionVariables.Length; i++)
+        {
+            PlayerPrefs.SetInt("Region" + (i + 1).ToString() + "InfestedTrees", regionVariables[i].infectedTrees);
+            PlayerPrefs.SetFloat("Region" + (i + 1).ToString() + "TimeSinceInfestedNewRegion", regionVariables[i].timeSinceInfectedNewRegion);
+            PlayerPrefs.SetFloat("Region" + (i + 1).ToString() + "TimeSinceSpread", regionVariables[i].timeSinceSpread);
+            PlayerPrefs.SetFloat("Region" + (i + 1).ToString() + "TimeSinceAddedMoney", regionVariables[i].timeSinceAddedMoney);
+            PlayerPrefs.SetFloat("Region" + (i + 1).ToString() + "TimeSinceFirstInfected", regionVariables[i].timeSinceFirstInfested);
+            if (regionVariables[i].firstDonation)
+            {
+                PlayerPrefs.SetInt("Region" + (i + 1).ToString() + "FirstDonation", 1);
+            }
+            else
+            {
+                PlayerPrefs.SetInt("Region" + (i + 1).ToString() + "FirstDonation", 0);
+            }
+        }
+    }
+
+    public void LoadGame()
+    {
+        for (int i = 0; i < regionVariables.Length; i++)
+        {
+            regionVariables[i].infectedTrees = PlayerPrefs.GetInt("Region" + (i + 1).ToString() + "InfestedTrees");
+            regionVariables[i].timeSinceInfectedNewRegion = PlayerPrefs.GetFloat("Region" + (i + 1).ToString() + "TimeSinceInfestedNewRegion");
+            regionVariables[i].timeSinceSpread = PlayerPrefs.GetFloat("Region" + (i + 1).ToString() + "TimeSinceSpread");
+            regionVariables[i].timeSinceAddedMoney = PlayerPrefs.GetFloat("Region" + (i + 1).ToString() + "TimeSinceAddedMoney");
+            regionVariables[i].timeSinceFirstInfested = PlayerPrefs.GetFloat("Region" + (i + 1).ToString() + "TimeSinceFirstInfected");
+
+            if (PlayerPrefs.GetInt("Region" + (i + 1).ToString() + "FirstDonation") == 1)
+            {
+                regionVariables[i].firstDonation = true;
+            } else
+            {
+                regionVariables[i].firstDonation = false;
+            }
+        }
+    }
+
+    public void StartNewGame()
+    {
+        PlayerPrefs.DeleteAll();
     }
 
     

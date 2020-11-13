@@ -40,5 +40,13 @@ public class SceneController : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void StartNewGame()
+    {
+        //clear player prefs
+        FindObjectOfType<SaveSystemController>().StartNewGame();
+        //load game scene
+        SceneManager.LoadScene(1);
+    }
 }
 

@@ -106,6 +106,8 @@ public class Region : MonoBehaviour
             timeSinceAddedMoney, timeSinceFirstInfested, firstDonation);
         //save the infestation numbers
         saveSystem.SetRegionVars(regionID, regionVars);
+        //save game
+        saveSystem.SaveGame();
     }
 
     private void ChangeColor()

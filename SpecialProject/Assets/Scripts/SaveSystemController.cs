@@ -7,16 +7,13 @@ public class SaveSystemController : MonoBehaviour
     //THIS SCRIPT IS USED FOR KEEPING THE GAME DATA WHEN CHANGING BETWEEN SCENES
 
     //these are the different data we want to save 
-    [SerializeField] int[] regionInfestedTrees = new int[9];
+    RegionVariables[] regionVariables = new RegionVariables[9];
 
     [SerializeField] int test = 1;
 
     //this will be the variable to store if the save system has been created 
     //to keep from creating multiple save systems. 
     static SaveSystemController instance = null;
-
-    //array of ints that will store infected trees in each region 
-    private int[] infestedTrees = new int[9];
 
     private void Update()
     {
@@ -31,17 +28,17 @@ public class SaveSystemController : MonoBehaviour
             //if not set instance to this 
             instance = this;
             //set starting values for infested trees
-            for (int i = 0; i < infestedTrees.Length; i++)
+            for (int i = 0; i < regionVariables.Length; i++)
             {
                 //region 2 starts with 1 tree infested
                 if (i == 1)
                 {
-                    infestedTrees[i] = 1;
+                    regionVariables[i] = new RegionVariables(1, 0f, 0f, 0f, 0f, false);
                 }
                 //all other regions start at 0
                 else
                 {
-                    infestedTrees[i] = 0;
+                    regionVariables[i] = new RegionVariables(0, 0f, 0f, 0f, 0f, false);
                 }
             }
         }
@@ -54,14 +51,15 @@ public class SaveSystemController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void SetInfestedTrees(int regionNumber, int infestedTrees)
+    public void SetRegionVars(int regionNumber, RegionVariables regionVars)
     {
-        this.infestedTrees[regionNumber - 1] = infestedTrees;
+        regionVariables[regionNumber - 1] = regionVars;
     }
 
-    public int GetInfestedTrees(int regionNumber)
+    public RegionVariables GetRegionVars(int regionNumber)
     {
-        return infestedTrees[regionNumber - 1];
+        return regionVariables[regionNumber - 1];
     }
+
     
 }

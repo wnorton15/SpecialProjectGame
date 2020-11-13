@@ -44,7 +44,8 @@ public class Region : MonoBehaviour
         newsController = FindObjectOfType<NewsController>();
         saveSystem = FindObjectOfType<SaveSystemController>();
 
-        infectedTrees = saveSystem.GetInfestedTrees(regionID);
+        SetRegionVars();
+
     }
 
     // Update is called once per frame
@@ -100,8 +101,11 @@ public class Region : MonoBehaviour
 
     private void OnDestroy()
     {
+        //create new region vars
+        RegionVariables regionVars = new RegionVariables(infectedTrees, timeSinceInfectedNewRegion, timeSinceSpread,
+            timeSinceAddedMoney, timeSinceFirstInfested, firstDonation);
         //save the infestation numbers
-        saveSystem.SetInfestedTrees(regionID, infectedTrees);
+        saveSystem.SetRegionVars(regionID, regionVars);
     }
 
     private void ChangeColor()
@@ -211,5 +215,17 @@ public class Region : MonoBehaviour
         newsController.ChangeNews(newNews);
         //start timer for donation, after 10 seconds add to money and change news to reflect 
         
+    }
+
+    private void SetRegionVars()
+    {
+        RegionVariables regionVars = saveSystem.GetRegionVars(regionID);
+
+        infectedTrees = regionVars.infectedTrees;
+        timeSinceInfectedNewRegion = regionVars.timeSinceInfectedNewRegion;
+        timeSinceSpread = regionVars.timeSinceSpread;
+        timeSinceAddedMoney = regionVars.timeSinceAddedMoney;
+        timeSinceFirstInfested = regionVars.timeSinceFirstInfested;
+        firstDonation = regionVars.firstDonation;
     }
 }

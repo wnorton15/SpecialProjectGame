@@ -8,17 +8,11 @@ public class SaveSystemController : MonoBehaviour
 
     //these are the different data we want to save 
     RegionVariables[] regionVariables = new RegionVariables[9];
-
-    [SerializeField] int test = 1;
-
+    private int difficulty = 1;
+    
     //this will be the variable to store if the save system has been created 
     //to keep from creating multiple save systems. 
     static SaveSystemController instance = null;
-
-    private void Update()
-    {
-        test += 1;
-    }
 
     private void Awake()
     {
@@ -108,6 +102,28 @@ public class SaveSystemController : MonoBehaviour
     public void StartNewGame()
     {
         PlayerPrefs.DeleteAll();
+        for (int i = 0; i < regionVariables.Length; i++)
+        {
+            regionVariables[i].infectedTrees = 0;
+            regionVariables[i].timeSinceInfectedNewRegion = 0f;
+            regionVariables[i].timeSinceSpread = 0f;
+            regionVariables[i].timeSinceAddedMoney = 0f;
+            regionVariables[i].timeSinceFirstInfested = 0f;
+            regionVariables[i].firstDonation = false;
+        }
+        //start of infestation
+        regionVariables[1].infectedTrees = 1;
+        SaveGame();
+    }
+
+    public void SetDifficulty(int difficulty)
+    {
+        this.difficulty = difficulty;
+    }
+
+    public int GetDifficulty()
+    {
+        return difficulty;
     }
 
     

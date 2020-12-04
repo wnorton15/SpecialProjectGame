@@ -48,5 +48,10 @@ public class SceneController : MonoBehaviour
         //load game scene
         SceneManager.LoadScene(1);
     }
+
+    public void LoadStart()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
 

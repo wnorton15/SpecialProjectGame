@@ -21,6 +21,8 @@ public class Region : MonoBehaviour
     float timeSinceAddedMoney = Mathf.Infinity;
     float timeBetweenAddedMoney = 5f;
 
+    int difficulty = 1;
+
     float timeSinceFirstInfested = 0f;
     bool firstDonation = false;
     [SerializeField] int firstDonationAmount = 1000000;
@@ -45,7 +47,7 @@ public class Region : MonoBehaviour
         saveSystem = FindObjectOfType<SaveSystemController>();
 
         SetRegionVars();
-
+        SetDifficulty();
     }
 
     // Update is called once per frame
@@ -75,11 +77,13 @@ public class Region : MonoBehaviour
         ChangeColor();
 
         percentInfected = (float)((float)infectedTrees / (float)trees);
+        percentInfected = (float)Math.Round((Double)percentInfected, 3);
 
         //update counter
         if (showing)
         {
-            infectionCounter.text = "Healthy Trees: " + (trees - infectedTrees).ToString() +
+            infectionCounter.text = "Region: " + regionID +
+                "\nHealthy Trees: " + (trees - infectedTrees).ToString() +
                 "\nInfected Trees: " + infectedTrees.ToString() +
                 "\nPercent Infected: " + (percentInfected * 100).ToString() + "%";
         }
@@ -229,5 +233,23 @@ public class Region : MonoBehaviour
         timeSinceAddedMoney = regionVars.timeSinceAddedMoney;
         timeSinceFirstInfested = regionVars.timeSinceFirstInfested;
         firstDonation = regionVars.firstDonation;
+    }
+
+    private void SetDifficulty()
+    {
+        difficulty = saveSystem.GetDifficulty();
+        //easy
+        if (difficulty == 1)
+        {
+            timeBetweenSpread = timeBetweenSpread * 1.5f;
+            timeBetweenInfectingNewRegion = timeBetweenInfectingNewRegion * 1.5f;
+        }
+        //medium is default values
+        //hard
+        else if (difficulty == 3)
+        {
+            timeBetweenSpread = timeBetweenSpread / 1.5f;
+            timeBetweenInfectingNewRegion = timeBetweenInfectingNewRegion / 1.5f;
+        }
     }
 }
